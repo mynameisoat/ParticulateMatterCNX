@@ -1,0 +1,14 @@
+[
+  {
+    "name": "home",
+    "path": "/home",
+    "component": "D:\\\\App\\\\pm\\\\pages\\\\home.vue",
+    "chunkName": "pages/home"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\App\\\\pm\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]
