@@ -10,15 +10,18 @@ import '..\\assets\\css\\font.css'
 
 import '..\\node_modules\\primeflex\\primeflex.css'
 
-import '..\\node_modules\\primevue\\resources\\themes\\bootstrap4-dark-blue\\theme.css'
+import '..\\assets\\css\\bg-color.css'
+
+import '..\\node_modules\\primevue\\resources\\themes\\tailwind-light\\theme.css'
 
 import '..\\node_modules\\primevue\\resources\\primevue.min.css'
 
 import '..\\node_modules\\primeicons\\primeicons.css'
 
+import _4bfda99e from '..\\layouts\\menubar.vue'
 import _6f6c098b from './layouts/default.vue'
 
-const layouts = { "_default": sanitizeComponent(_6f6c098b) }
+const layouts = { "_menubar": sanitizeComponent(_4bfda99e),"_default": sanitizeComponent(_6f6c098b) }
 
 export default {
   render (h, props) {

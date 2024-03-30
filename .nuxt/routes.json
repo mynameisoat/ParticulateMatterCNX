@@ -1,14 +1,23 @@
 [
   {
+    "name": "about",
+    "path": "/about",
+    "component": "D:\\\\App\\\\pm\\\\pages\\\\about.vue",
+    "chunkName": "pages/about",
+    "_name": "_77ded6f3"
+  },
+  {
     "name": "home",
     "path": "/home",
     "component": "D:\\\\App\\\\pm\\\\pages\\\\home.vue",
-    "chunkName": "pages/home"
+    "chunkName": "pages/home",
+    "_name": "_23346ee9"
   },
   {
     "name": "index",
     "path": "/",
     "component": "D:\\\\App\\\\pm\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_d0d29c90"
   }
 ]

@@ -1,5 +1,6 @@
 export default {
   ssr: false,
+  components: true,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'เว็บไซต์สำหรับการตรวจสอบค่าฝุ่นละอองในอากาศในจังหวัดเชียงใหม่',
@@ -20,7 +21,8 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
       '@/assets/css/font.css',
-      'primeflex/primeflex.css'
+      'primeflex/primeflex.css',
+      '@/assets/css/bg-color.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -40,14 +42,15 @@ export default {
     // Doc: https://www.primefaces.org/primevue/showcase-v2/#/setup
     [
       'primevue/nuxt', {
-          theme: 'bootstrap4-dark-blue',      //name of the theme, defaults to saga-blue
+          theme: 'tailwind-light',
           ripple: true,    //whether the ripple animation is enabled, defaults to false
-          components: ['Button',],     //an array of components to be registered
+          components: ['Avatar','Button','Skeleton','Card','Divider','Menubar','Accordion','AccordionTab','Knob' ],     //an array of components to be registered
           directives: []      //an array of directives to be registered
       }
   ],
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

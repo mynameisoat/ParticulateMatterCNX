@@ -14,7 +14,15 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 import nuxt_plugin_plugin_8bf5c9c6 from 'nuxt_plugin_plugin_8bf5c9c6' // Source: .\\components\\plugin.js (mode: 'all')
 import nuxt_plugin_axios_079e92c0 from 'nuxt_plugin_axios_079e92c0' // Source: .\\axios.js (mode: 'all')
+import nuxt_plugin_knobplugin11d438f5_15b63cb1 from 'nuxt_plugin_knobplugin11d438f5_15b63cb1' // Source: .\\knob.plugin.11d438f5.js (mode: 'all')
+import nuxt_plugin_accordiontabplugin32458fe8_261e1d3d from 'nuxt_plugin_accordiontabplugin32458fe8_261e1d3d' // Source: .\\accordiontab.plugin.32458fe8.js (mode: 'all')
+import nuxt_plugin_accordionplugin9d326c8e_6eea1e5d from 'nuxt_plugin_accordionplugin9d326c8e_6eea1e5d' // Source: .\\accordion.plugin.9d326c8e.js (mode: 'all')
+import nuxt_plugin_menubarplugin287a3bf6_145ca346 from 'nuxt_plugin_menubarplugin287a3bf6_145ca346' // Source: .\\menubar.plugin.287a3bf6.js (mode: 'all')
+import nuxt_plugin_dividerplugin5f57e6ec_33f1642e from 'nuxt_plugin_dividerplugin5f57e6ec_33f1642e' // Source: .\\divider.plugin.5f57e6ec.js (mode: 'all')
+import nuxt_plugin_cardplugin271ced0f_58ea1e0f from 'nuxt_plugin_cardplugin271ced0f_58ea1e0f' // Source: .\\card.plugin.271ced0f.js (mode: 'all')
+import nuxt_plugin_skeletonplugin24e86e8c_67cfb9a2 from 'nuxt_plugin_skeletonplugin24e86e8c_67cfb9a2' // Source: .\\skeleton.plugin.24e86e8c.js (mode: 'all')
 import nuxt_plugin_buttonplugin5b0bf4f1_7d62c3fe from 'nuxt_plugin_buttonplugin5b0bf4f1_7d62c3fe' // Source: .\\button.plugin.5b0bf4f1.js (mode: 'all')
+import nuxt_plugin_avatarplugin10896b50_0936a3ea from 'nuxt_plugin_avatarplugin10896b50_0936a3ea' // Source: .\\avatar.plugin.10896b50.js (mode: 'all')
 import nuxt_plugin_configpluginripple200095f0_67c77f82 from 'nuxt_plugin_configpluginripple200095f0_67c77f82' // Source: .\\config.plugin-ripple.200095f0.js (mode: 'all')
 import nuxt_plugin_vuetyped_51c23e5f from 'nuxt_plugin_vuetyped_51c23e5f' // Source: ..\\plugins\\vuetyped.js (mode: 'client')
 
@@ -190,8 +198,40 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_axios_079e92c0(app.context, inject)
   }
 
+  if (typeof nuxt_plugin_knobplugin11d438f5_15b63cb1 === 'function') {
+    await nuxt_plugin_knobplugin11d438f5_15b63cb1(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_accordiontabplugin32458fe8_261e1d3d === 'function') {
+    await nuxt_plugin_accordiontabplugin32458fe8_261e1d3d(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_accordionplugin9d326c8e_6eea1e5d === 'function') {
+    await nuxt_plugin_accordionplugin9d326c8e_6eea1e5d(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_menubarplugin287a3bf6_145ca346 === 'function') {
+    await nuxt_plugin_menubarplugin287a3bf6_145ca346(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_dividerplugin5f57e6ec_33f1642e === 'function') {
+    await nuxt_plugin_dividerplugin5f57e6ec_33f1642e(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_cardplugin271ced0f_58ea1e0f === 'function') {
+    await nuxt_plugin_cardplugin271ced0f_58ea1e0f(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_skeletonplugin24e86e8c_67cfb9a2 === 'function') {
+    await nuxt_plugin_skeletonplugin24e86e8c_67cfb9a2(app.context, inject)
+  }
+
   if (typeof nuxt_plugin_buttonplugin5b0bf4f1_7d62c3fe === 'function') {
     await nuxt_plugin_buttonplugin5b0bf4f1_7d62c3fe(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_avatarplugin10896b50_0936a3ea === 'function') {
+    await nuxt_plugin_avatarplugin10896b50_0936a3ea(app.context, inject)
   }
 
   if (typeof nuxt_plugin_configpluginripple200095f0_67c77f82 === 'function') {
