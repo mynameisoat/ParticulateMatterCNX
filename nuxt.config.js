@@ -22,12 +22,14 @@ export default {
   css: [
       '@/assets/css/font.css',
       'primeflex/primeflex.css',
-      '@/assets/css/bg-color.css'
+      '@/assets/css/bg-color.css',
+      '@/assets/css/tailwind.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '@/plugins/vuetyped.js', ssr: false }
+    { src: '@/plugins/vuetyped.js', ssr: false },
+    { src:  '~/filters/allFormat', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -35,6 +37,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/tailwindcss'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

@@ -12,6 +12,8 @@ import '..\\node_modules\\primeflex\\primeflex.css'
 
 import '..\\assets\\css\\bg-color.css'
 
+import '..\\assets\\css\\tailwind.css'
+
 import '..\\node_modules\\primevue\\resources\\themes\\tailwind-light\\theme.css'
 
 import '..\\node_modules\\primevue\\resources\\primevue.min.css'

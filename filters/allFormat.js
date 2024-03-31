@@ -20,7 +20,7 @@ export default () => {
     if (!value) return "";
     const options = {
       year: "numeric",
-      month: "numeric",
+      month: "long",
       day: "numeric",
       hour: "numeric",
       minute: "numeric",

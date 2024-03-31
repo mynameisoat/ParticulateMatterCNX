@@ -2,12 +2,13 @@
   <div class="m-3">
     <Menubar :model="items">
       <template #start>
-        <img
-          alt="logo"
-          src="../assets/img/icons8-protection-mask-96.png"
-          height="40"
-          class="mr-2"
-        />
+        <div>
+          <img
+            alt="logo"
+            src="../assets/img/icons8-mask-48.png"
+            class="mr-1"
+          />
+        </div>
       </template>
     </Menubar>
     <Nuxt />
@@ -43,5 +44,6 @@ export default {
 <style>
 .p-menubar{
   font-family: "Athiti", sans-serif;
+  height: 9vh;
 }
 </style>
