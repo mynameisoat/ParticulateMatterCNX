@@ -47,7 +47,7 @@ export default {
       'primevue/nuxt', {
           theme: 'tailwind-light',
           ripple: true,    //whether the ripple animation is enabled, defaults to false
-          components: ['Avatar','Button','Skeleton','Card','Divider','Menubar','Accordion','AccordionTab','Knob' ],     //an array of components to be registered
+          components: ['Avatar','Button','Skeleton','Card','Divider','Menubar','Accordion','AccordionTab','Knob','DataView' ],     //an array of components to be registered
           directives: []      //an array of directives to be registered
       }
   ],

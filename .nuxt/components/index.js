@@ -1,3 +1,5 @@
+export { default as Card } from '../..\\components\\Card.vue'
+export { default as CardCustom } from '../..\\components\\CardCustom.vue'
 export { default as NuxtLogo } from '../..\\components\\NuxtLogo.vue'
 export { default as Tutorial } from '../..\\components\\Tutorial.vue'
 

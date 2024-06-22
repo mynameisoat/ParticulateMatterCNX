@@ -1,4 +1,10 @@
 {
+  "Card": {
+    "description": "Auto imported from components/Card.vue"
+  },
+  "CardCustom": {
+    "description": "Auto imported from components/CardCustom.vue"
+  },
   "NuxtLogo": {
     "description": "Auto imported from components/NuxtLogo.vue"
   },

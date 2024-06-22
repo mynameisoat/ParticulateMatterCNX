@@ -33,7 +33,7 @@ export default {
         {
           label: "ฝุ่นละอองคืออะไร ?",
           icon: "pi pi-question",
-          to: "/about",
+          url: 'https://rguard.ntdigitalsolutions.com/info',
         },
       ],
     };
