@@ -6,84 +6,87 @@
         <b>ค่าฝุ่นละอองโดยรวมวันนี้</b>
       </div>
     </Divider>
-    <Card>
-      <template #header> </template>
-      <template #title>
-        <Avatar :image="imageUrl" class="mr-2" size="large" shape="circle" />
-        เชียงใหม่
-        <p class="font-light text-base">
-          อัพเดทเมื่อ : {{ Alldata.timestamp | formatDateTime }}
-        </p>
-      </template>
-      <template #content>
-        <div class="space-y-4">
-          <span class="flex justify-center">
-            <Knob
-              v-model="value"
-              :min="0"
-              :max="300"
-              :size="200"
-              :valueColor="Color"
-              valueTemplate="{value}AQI"
-              readonly
-            />
-          </span>
-          <span class="flex justify-center">
-            <p class="font-black text-3xl">{{ Alldata.pollution_level }}</p>
-          </span>
-          <span class="grid grid-cols-3 gap-4">
-            <div class="flex justify-content-center flex-wrap">
+    <div class="flex justify-center">
+      <Card>
+        <template #header> </template>
+        <template #title>
+          <Avatar :image="imageUrl" class="mr-2" size="large" shape="circle" />
+          เชียงใหม่
+          <p class="font-light text-base">
+            อัพเดทเมื่อ : {{ Alldata.timestamp | formatDateTime }}
+          </p>
+        </template>
+        <template #content>
+          <div class="space-y-4">
+            <span class="flex justify-center">
               <Knob
-                v-model="valuepm1"
+                v-model="value"
                 :min="0"
                 :max="300"
-                :size="100"
+                :size="200"
                 :valueColor="Color"
-                :valueTemplate="value_pm1"
+                valueTemplate="{value}AQI"
                 readonly
               />
-              <span> PM 1 </span>
-            </div>
-            <div class="flex justify-content-center flex-wrap">
-              <Knob
-                v-model="valuepm2_5"
-                :min="0"
-                :max="300"
-                :size="100"
-                :valueColor="Color"
-                :valueTemplate="value_pm2_5"
-                readonly
-              />
-              <span> PM 2.5 </span>
-            </div>
-            <div class="flex justify-content-center flex-wrap">
-              <Knob
-                v-model="valuepm10"
-                :min="0"
-                :max="300"
-                :size="100"
-                :valueColor="Color"
-                :valueTemplate="value_pm10"
-                readonly
-              />
-              <span> PM 10 </span>
-            </div>
-          </span>
-          <h2 class="text-center">
-            *สำหรับค่าของ PM 1 PM 2.5 และ PM 10 จะอยู่ในหน่วยของ มคก./ลบ.ม. หรือ
-            µg./m3
-          </h2>
-        </div>
-      </template>
-    </Card>
+            </span>
+            <span class="flex justify-center">
+              <p class="font-black text-3xl">{{ Alldata.pollution_level }}</p>
+            </span>
+            <span class="grid grid-cols-3 gap-4">
+              <div class="flex justify-content-center flex-wrap">
+                <Knob
+                  v-model="valuepm1"
+                  :min="0"
+                  :max="300"
+                  :size="100"
+                  :valueColor="Color"
+                  :valueTemplate="value_pm1"
+                  readonly
+                />
+              </div>
+              <div class="flex justify-content-center flex-wrap">
+                <Knob
+                  v-model="valuepm2_5"
+                  :min="0"
+                  :max="300"
+                  :size="100"
+                  :valueColor="Color"
+                  :valueTemplate="value_pm2_5"
+                  readonly
+                />
+              </div>
+              <div class="flex justify-content-center flex-wrap">
+                <Knob
+                  v-model="valuepm10"
+                  :min="0"
+                  :max="300"
+                  :size="100"
+                  :valueColor="Color"
+                  :valueTemplate="value_pm10"
+                  readonly
+                />
+              </div>
+            </span>
+            <span class="grid grid-cols-3 gap-4" style="margin: 0;">
+              <div class="flex justify-content-center"> PM 1</div>
+              <div class="flex justify-content-center">PM 2.5</div>
+              <div class="flex justify-content-center">PM 10</div>
+            </span>
+            <h2 class="text-center">
+              *สำหรับค่าของ PM 1 PM 2.5 และ PM 10 จะอยู่ในหน่วยของ มคก./ลบ.ม.
+              หรือ µg./m3
+            </h2>
+          </div>
+        </template>
+      </Card>
+    </div>
     <Divider align="left">
       <div class="inline-flex align-items-center">
         <i class="pi pi-sun mr-2"></i>
         <b>ค่าฝุ่นละอองรายอำเภอ</b>
       </div>
     </Divider>
-    {{ items }}
-    <div class="grid grid-cols-3 gap-2">
+    <div class="grid grid-rows-1 place-content-center md:grid-cols-2 xl:grid-cols-3 gap-4">
       <CardCustom
         v-for="(item, index) in items"
         :key="index"
@@ -127,7 +130,6 @@ export default {
   mounted() {
     this.fetchData();
     this.fetchDataChomThong();
-    this.fetchDataChiangDao();
   },
 
   computed: {
@@ -183,7 +185,7 @@ export default {
         const dataChomThong2 = dataChomThong.data;
         const dataChomThong3 = dataChomThong2;
         if (Array.isArray(dataChomThong3) && dataChomThong3.length > 0) {
-          this.items[0] = dataChomThong3.map((item) => ({
+          const chomThong = dataChomThong3.map((item) => ({
             districtName: "จอมทอง",
             timeStamp: item.timestamp,
             valueaqi: item.aqi,
@@ -195,11 +197,13 @@ export default {
               "https://img.icons8.com/?size=100&id=lPL6NCjQz9MV&format=png&color=000000",
           }));
           console.log(this.items);
+          this.items = this.items.concat(chomThong);
         } else {
           console.error("dataChomThong3 is not an array or is empty");
           this.items = [];
         }
       });
+      this.fetchDataChiangDao();
     },
 
     async fetchDataChiangDao() {
@@ -209,7 +213,7 @@ export default {
         const dataChiangDao2 = dataChiangDao.data;
         const dataChiangDao3 = dataChiangDao2;
         if (Array.isArray(dataChiangDao3) && dataChiangDao3.length > 0) {
-          this.items[1] = dataChiangDao3.map((item) => ({
+          const ChiangDao = dataChiangDao3.map((item) => ({
             districtName: "เชียงดาว",
             timeStamp: item.timestamp,
             valueaqi: item.aqi,
@@ -221,6 +225,7 @@ export default {
               "https://img.icons8.com/?size=100&id=lPL6NCjQz9MV&format=png&color=000000",
           }));
           console.log(this.items);
+          this.items = this.items.concat(ChiangDao);
         } else {
           console.error("dataChiangDao3 is not an array or is empty");
           this.items = [];
@@ -256,10 +261,9 @@ export default {
   background-color: #f5f5f5; /* สีพื้นหลังโปร่งใส */
   backdrop-filter: blur(10px); /* ใช้เทคนิค backdrop-filter เพื่อเบลอพื้นหลัง */
   border-radius: 10px; /* กำหนดรูปร่างของกรอบ */
-  padding: 20px; /* กำหนดระยะห่างภายในกรอบ */
-  max-width: 500px; /* กำหนดความกว้างของกรอบ */
+  max-width: 400vw; /* กำหนดความกว้างของกรอบ */
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* เพิ่มเงาใต้กรอบ */
-  margin: 40px auto; /*จัดตำแหน่งกรอบตรงกลาง*/
+  margin: 0px;
 }
 
 .p-divider {

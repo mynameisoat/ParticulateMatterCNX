@@ -34,7 +34,6 @@
               :valueTemplate="value_pm1"
               readonly
             />
-            <span> PM 1 </span>
           </div>
           <div class="flex justify-center flex-wrap pt-3">
             <Knob
@@ -46,7 +45,6 @@
               :valueTemplate="value_pm2_5"
               readonly
             />
-            <span> PM 2.5 </span>
           </div>
           <div class="flex justify-center flex-wrap pt-3">
             <Knob
@@ -58,9 +56,13 @@
               :valueTemplate="value_pm10"
               readonly
             />
-            <span> PM 10 </span>
           </div>
         </div>
+        <span class="grid grid-cols-3 gap-4" style="margin: 0">
+          <div class="flex justify-content-center">PM 1</div>
+          <div class="flex justify-content-center">PM 2.5</div>
+          <div class="flex justify-content-center">PM 10</div>
+        </span>
         <div>
           <h2 class="mt-3 text-center">
             *สำหรับค่าของ PM 1 PM 2.5 และ PM 10 จะอยู่ในหน่วยของ มคก./ลบ.ม. หรือ
@@ -167,10 +169,9 @@ export default {
   background-color: #f5f5f5; /* สีพื้นหลังโปร่งใส */
   backdrop-filter: blur(10px); /* ใช้เทคนิค backdrop-filter เพื่อเบลอพื้นหลัง */
   border-radius: 10px; /* กำหนดรูปร่างของกรอบ */
-  padding: 20px; /* กำหนดระยะห่างภายในกรอบ */
-  width: 500px; /* กำหนดความกว้างของกรอบ */
+  max-width: 400vw; /* กำหนดความกว้างของกรอบ */
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* เพิ่มเงาใต้กรอบ */
-  margin: 40px auto; /*จัดตำแหน่งกรอบตรงกลาง*/
+  margin: 0px;
 }
 
 .p-knob-text {
